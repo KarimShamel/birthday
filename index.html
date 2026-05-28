@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love ❤️</title>
+    <!-- Importing Trendy Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #ff4b72;
+            --bg-color: #fff5f7;
+            --text-dark: #2d2d2d;
+            --text-light: #6a6a6a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .quote-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #ffe3e8 0%, #ffc5d3 100%);
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            z-index: 10;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            z-index: 10;
+            animation: fadeInUp 1.5s ease;
+            max-width: 600px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            z-index: 10;
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background-color: #ffffff;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .quote-text {
+            font-size: 2.5rem;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- MESSAGE SECTION --- */
+        .message-section {
+            padding: 5rem 2rem;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        .message-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(255, 75, 114, 0.05);
+            max-width: 700px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .message-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .message-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-section {
+            padding: 5rem 2rem;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: var(--primary);
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        /* --- ANIMATIONS & EFFECTS --- */
+        .heart {
+            position: absolute;
+            top: -10vh;
+            color: #ff4b72;
+            font-size: 20px;
+            opacity: 0.6;
+            animation: floatDown linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatDown {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        /* Scroll Reveal Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .quote-text { font-size: 1.8rem; }
+            .message-card { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <h1>Happy Birthday, Handsome!</h1>
+        <p>To my favorite person, my best friend, and the love of my life. Today is all about you.</p>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <!-- Romantic Quote -->
+    <section class="quote-section reveal">
+        <div class="quote-container">
+            <div class="quote-text">
+                "In all the world, there is no heart for me like yours. <br>In all the world, there is no love for you like mine."
+            </div>
+            <div class="quote-author">— Maya</div>
+        </div>
+    </section>
+
+    <!-- Personal Message -->
+    <section class="message-section reveal">
+        <div class="message-card">
+            <h2>To My Everything...</h2>
+            <p>Every day with you feels like a gift, but today is extra special because it's the day the world got a little bit brighter when you were born.</p>
+            <p>Thank you for your endless patience, your beautiful smile, and for making me feel like the luckiest girl alive. I love watching you chase your dreams, and I promise to be by your side cheering you on forever.</p>
+            <p>Here's to making countless more memories, laughing until our stomachs hurt, and loving each other more with every passing year. Have the happiest birthday, my love!</p>
+        </div>
+    </section>
+
+    <!-- Memories / Gallery -->
+    <section class="gallery-section reveal">
+        <h2>Our Beautiful Moments</h2>
+        <div class="gallery-grid">
+            <!-- Replace the src URLs with links to your own photos -->
+            <div class="gallery-item">
+                <img src="couple1.jpg" alt="Us 1">
+            </div>
+            <div class="gallery-item">
+                <img src="couple2.jpg" alt="Us 2">
+            </div>
+            <div class="gallery-item">
+                <img src="couple3.jpg" alt="Us 3">
+            </div>
+            <div class="gallery-item">
+                <img src="couple4.jpg" alt="Us 4">
+            </div>
+            <div class="gallery-item">
+                <img src="couple5.jpg" alt="Us 4">
+            </div>
+            <div class="gallery-item">
+                <img src="couple6.jpg" alt="Us 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        I love you endlessly. ❤️
+    </footer>
+
+    <!-- --- JAVASCRIPT FOR ANIMATIONS --- -->
+    <script>
+        // 1. Floating Hearts Animation Background
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            
+            // Randomize position, size, and animation duration
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's'; // Between 4 and 7 seconds
+            
+            document.getElementById('hero').appendChild(heart);
+
+            // Remove heart after it falls down
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        // Generate a new heart every 400ms
+        setInterval(createHeart, 400);
+
+        // 2. Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        // Check on scroll and on initial load
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
